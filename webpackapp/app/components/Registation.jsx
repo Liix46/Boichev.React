@@ -4,10 +4,12 @@ class Registration extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {_firstName: this.props.firstName};
-        this.state = {_lastName: this.props.lastName};
-        this.state = {_age: this.props.age};
-        this.state = {_aboutMe: this.props.aboutMe};
+        this.state = { 
+            _firstName: this.props.firstName,
+            _lastName: this.props.lastName,
+            _age: this.props.age,
+            _aboutMe: this.props.aboutMe 
+        };
 
     }
 
@@ -20,5 +22,5 @@ class Registration extends React.Component {
         </div>);
     }
 }
-
+//Registration.defaultProps = {firstName: "User",lastName:"", age: 18, aboutMe: "Nothing"};
 module.exports = Registration;
