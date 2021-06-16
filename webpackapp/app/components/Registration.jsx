@@ -1,6 +1,8 @@
 let React = require('react');
 let DataCapture = require('./DataCapture.jsx');
 let {Link, BrowserRouter}  = require ('react-router-dom');
+let user = require('../classes/User.jsx');
+
 
 class Registation extends React.Component {
     constructor() {
