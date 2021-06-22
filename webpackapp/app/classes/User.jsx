@@ -37,4 +37,6 @@ class User {
     }
 }
 
-module.exports = User;
+let user = new User();
+
+module.exports = user;

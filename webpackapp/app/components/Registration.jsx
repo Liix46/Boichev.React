@@ -18,31 +18,29 @@ class Registation extends React.Component {
         this.onChangeLastName = this.onChangeLastName.bind(this);
         this.onChangeAge = this.onChangeAge.bind(this);
         this.onChangeAboutMe = this.onChangeAboutMe.bind(this);
-        this.press = this.press.bind(this);
 
     }
     onChangeFirstName(event){
         let firstName = event.target.value;
         this.setState({_firstName: firstName});
+        user.firstname = firstName;
+        //debugger;
     }
     onChangeLastName(event){
         let lastName = event.target.value;
         this.setState({_lastName: lastName});
+        user.lastname = lastName;
     }
     onChangeAge(event){
         let age = parseInt(event.target.value);
         this.setState({_age: age});
+        user.age = age;
     }
     onChangeAboutMe(event){
         let aboutMe = event.target.value;
         this.setState({_aboutMe: aboutMe});
+        user.aboutMe = aboutMe;
     }
-    // press(event){
-    //     event.preventDefault();
-    //     return(
-    //         <DataCapture _firstName={this._firstName} _lastName={this._lastName} _age={this._age} _aboutMe={this._aboutMe}></DataCapture>
-    //     )
-    // }
 
     render() {
         return (
@@ -59,7 +57,7 @@ class Registation extends React.Component {
                 <label>About me: </label>
                 <input type='text' id='textAboutMe' value={this.state._aboutMe} onChange={this.onChangeAboutMe}/>
                 <br></br>
-                <Link to={`/MySite/:${this._firstName}/:${this._lastName}/:${this.age}/:${this._aboutMe}`}>Save</Link>
+                <Link to={`/MySite`}>Save</Link>
             </form>
         )
     }
