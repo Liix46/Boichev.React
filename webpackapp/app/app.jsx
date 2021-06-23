@@ -14,6 +14,7 @@ ReactDOM.render(
     <Router>
         <div>
             <Switch>
+                
                 <Route exact path={`/SingUp`} component={Registration} />
                 <Route exact path="/SingIn" component={Login} />
                 <Route exact path="/MySite" /*component={DataCapture}*/>

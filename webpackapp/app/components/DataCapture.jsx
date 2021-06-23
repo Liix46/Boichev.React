@@ -5,7 +5,7 @@ class DataCapture extends React.Component {
         debugger;
         super(props);
         this.state = { 
-            _firstName: user.firstName,
+            _firstName: this.props.firstName,
             _lastName: this.props.lastName,
             _age: this.props.age,
             _aboutMe: this.props.aboutMe 
@@ -16,10 +16,10 @@ class DataCapture extends React.Component {
     render() {
         debugger;
         return( <div>
-            <p>Name: {this._firstName}</p>
-            <p>Surname: {this._lastName}</p>
-            <p>Age: {this.props._age}</p>
-            <p>About me: {this.props._aboutMe}</p>
+            <p>Name: {this.state._firstName}</p>
+            <p>Surname: {this.state._lastName}</p>
+            <p>Age: {this.state._age}</p>
+            <p>About me: {this.state._aboutMe}</p>
         </div>);
     }
 }
