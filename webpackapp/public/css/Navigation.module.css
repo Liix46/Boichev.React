@@ -1,19 +1,31 @@
-div>div {
-    /* background-image: url(../src/backgroundRegistration.jpg); */
-    border: solid 1px black;
+ /* for div>div */
+ /*background-image: url(../src/backgroundRegistration.jpg); */
+    /* background: linear-gradient(to top left, rgb(134, 215, 226), pink);*/
+    /*border: solid 1px black;*/
+
+/* div>div {
+  background-image: url(../src/BluePinkBackground.jpg);
+   
+    background-repeat: no-repeat;
+    background-size: cover;
+    
     width: 100vw;
     height:100vh;
     text-align: center;
-    background: linear-gradient(to top left, rgb(134, 215, 226), pink);
+   
     
-  }
+} */
 
 a {
   margin: 10px;
   min-width: 15vw;
-  
 }
 
 div>div>a:first-child{
   margin-top: 40vh;
+}
+
+.main{
+  background:tomato;
+  border: solid 10px black;
 }
