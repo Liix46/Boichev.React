@@ -1,0 +1,19 @@
+div>div {
+    /* background-image: url(../src/backgroundRegistration.jpg); */
+    border: solid 1px black;
+    width: 100vw;
+    height:100vh;
+    text-align: center;
+    background: linear-gradient(to top left, rgb(134, 215, 226), pink);
+    
+  }
+
+a {
+  margin: 10px;
+  min-width: 15vw;
+  
+}
+
+div>div>a:first-child{
+  margin-top: 40vh;
+}

@@ -1,16 +1,16 @@
-let React = require('react');
-let DataCapture = require('./DataCapture.jsx');
-let {Link, BrowserRouter}  = require ('react-router-dom');
-let user = require('../classes/User.jsx');
+import React from 'react';
+import {Link, BrowserRouter}  from 'react-router-dom';
+
+import User  from '../classes/User.jsx';
 
 
-class Registation extends React.Component {
-    constructor() {
-        super();
+export default class Registation extends React.Component {
+    constructor(props) {
+        super(props);
         this.state = { 
             _firstName: "",
             _lastName: "",
-            _age: 18,
+            _age: '0',
             _aboutMe: "" 
         };
 
@@ -19,29 +19,34 @@ class Registation extends React.Component {
         this.onChangeAge = this.onChangeAge.bind(this);
         this.onChangeAboutMe = this.onChangeAboutMe.bind(this);
 
+        this.Save = this.Save.bind(this);
+
     }
     onChangeFirstName(event){
         let firstName = event.target.value;
         this.setState({_firstName: firstName});
-        user.firstname = firstName;
-        //debugger;
     }
     onChangeLastName(event){
         let lastName = event.target.value;
         this.setState({_lastName: lastName});
-        user.lastname = lastName;
     }
     onChangeAge(event){
-        let age = parseInt(event.target.value);
+        let age = event.target.value;
         this.setState({_age: age});
-        user.age = age;
     }
     onChangeAboutMe(event){
         let aboutMe = event.target.value;
         this.setState({_aboutMe: aboutMe});
-        user.aboutMe = aboutMe;
     }
+    Save(){
+        let user = new User();
+        user.firstname = this.state._firstName;
+        user.lastname = this.state._lastName;
+        user.age = this.state._age;
+        user.aboutme = this.state._aboutMe;
 
+        this.props.handleSaveChange(user);
+    }
     render() {
         return (
             <form>
@@ -57,10 +62,9 @@ class Registation extends React.Component {
                 <label>About me: </label>
                 <input type='text' id='textAboutMe' value={this.state._aboutMe} onChange={this.onChangeAboutMe}/>
                 <br></br>
-                <Link to={`/MySite`}>Save</Link>
+                <Link to={`/MySite`} onClick={this.Save}>Save</Link>
             </form>
         )
     }
 }
 
-module.exports = Registation;

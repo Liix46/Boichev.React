@@ -1,8 +1,6 @@
-let React = require('react');
-let user = require('../classes/User.jsx');
-class DataCapture extends React.Component {
+import React from 'react';
+export default class DataCapture extends React.Component {
     constructor(props){
-        debugger;
         super(props);
         this.state = { 
             _firstName: this.props.firstName,
@@ -14,7 +12,6 @@ class DataCapture extends React.Component {
     }
 
     render() {
-        debugger;
         return( <div>
             <p>Name: {this.state._firstName}</p>
             <p>Surname: {this.state._lastName}</p>
@@ -23,4 +20,3 @@ class DataCapture extends React.Component {
         </div>);
     }
 }
-module.exports = DataCapture;

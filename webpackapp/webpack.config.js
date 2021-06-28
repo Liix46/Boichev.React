@@ -13,6 +13,10 @@ module.exports = {
      port: 8081,
      open: true
    },
+    resolve: {
+        // Add `.ts` and `.tsx` as a resolvable extension.
+        extensions: [".ts", ".tsx", ".js", ".css", ".scss"]
+    },
     module:{
         rules:[   //загрузчик для jsx
             {
@@ -22,7 +26,31 @@ module.exports = {
                 options:{
                     presets:["@babel/preset-env", "@babel/preset-react"]    // используемые плагины
                 }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                  // [style-loader](/loaders/style-loader)
+                  { loader: 'style-loader' },
+                  // [css-loader](/loaders/css-loader)
+                  {
+                    loader: 'css-loader',
+                    options: {
+                      modules: true
+                    }
+                  },
+                  // [sass-loader](/loaders/sass-loader)
+                  { loader: 'sass-loader' }
+                ]
+            },
+            {
+                test: /\.(png|jpe?g|gif|jp2|webp)$/,
+                loader: 'file-loader',
+                options: {
+                  name: 'images/[name].[ext]'
+                }
             }
+            
         ]
     }
 }
