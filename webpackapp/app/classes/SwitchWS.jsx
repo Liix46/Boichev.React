@@ -25,7 +25,8 @@ export default class SwitchWS extends React.Component {
         const firstname = this.state._user.firstname;
         const lastname = this.state._user.lastname;
         const ageuser = this.state._user.age;
-        const aboutme = this.state._user.aboutme;
+        const dateOfBirth = this.state._user.dateOfBirth;
+        const gender = this.state._user.gender;
 
         return (
             <Switch>
@@ -34,7 +35,11 @@ export default class SwitchWS extends React.Component {
                 </Route>
                 <Route exact path={"/SingIn"} component={Login} />
                 <Route exact path={"/MySite"}>
-                    <DataCapture firstName={`${firstname}`} lastName={`${lastname}`} age={`${ageuser}`} aboutMe={`${aboutme}`}>
+                    <DataCapture firstName={`${firstname}`} 
+                                lastName={`${lastname}`} 
+                                age={`${ageuser}`} 
+                                dateOfBirth={`${dateOfBirth}`} 
+                                gender={`${gender}`}>
                     </DataCapture>
                 </Route>
                 <Route exact path="/" component={Navigation} />

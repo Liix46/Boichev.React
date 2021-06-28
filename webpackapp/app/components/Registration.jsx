@@ -1,69 +1,151 @@
 import React from 'react';
-import {Link, BrowserRouter}  from 'react-router-dom';
+import { Link, BrowserRouter } from 'react-router-dom';
 
-import User  from '../classes/User.jsx';
+import User from '../classes/User.jsx';
+/*import '../../public/css/Registration.module.css'*/
 
 
 export default class Registation extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             _firstName: "",
             _lastName: "",
-            _age: '0',
-            _aboutMe: "" 
+            _age: "",
+            _email: "",
+            _password: "",
+            _confirmPassword: "",
+            _dateOfBirth: "",
+            _gender: ""
         };
 
         this.onChangeFirstName = this.onChangeFirstName.bind(this);
         this.onChangeLastName = this.onChangeLastName.bind(this);
         this.onChangeAge = this.onChangeAge.bind(this);
-        this.onChangeAboutMe = this.onChangeAboutMe.bind(this);
+        this.onChangeEmail = this.onChangeEmail.bind(this);
+        this.onChangePassword = this.onChangePassword.bind(this);
+        this.onChangeConfirmPassword = this.onChangeConfirmPassword.bind(this);
+        this.onChangeDateOfBirth = this.onChangeDateOfBirth.bind(this);
+        this.onChangeGender = this.onChangeGender.bind(this);
 
         this.Save = this.Save.bind(this);
 
     }
-    onChangeFirstName(event){
+    onChangeFirstName(event) {
         let firstName = event.target.value;
-        this.setState({_firstName: firstName});
+        this.setState({ _firstName: firstName });
     }
-    onChangeLastName(event){
+    onChangeLastName(event) {
         let lastName = event.target.value;
-        this.setState({_lastName: lastName});
+        this.setState({ _lastName: lastName });
     }
-    onChangeAge(event){
+    onChangeAge(event) {
         let age = event.target.value;
-        this.setState({_age: age});
+        this.setState({ _age: age });
     }
-    onChangeAboutMe(event){
-        let aboutMe = event.target.value;
-        this.setState({_aboutMe: aboutMe});
+    onChangeEmail(event) {
+        let email = event.target.value;
+        this.setState({ _email: email });
     }
-    Save(){
+    onChangePassword(event) {
+        let password = event.target.value;
+        this.setState({ _password: password });
+    }
+    onChangeConfirmPassword(event) {
+        let confirmPassword = event.target.value;
+        this.setState({ _confirmPassword: confirmPassword });
+    }
+    onChangeDateOfBirth(event) {
+        let dateOfBirth = event.target.value;
+        this.setState({ _dateOfBirth: dateOfBirth });
+    }
+
+    onChangeGender(event) {
+        let gender = event.target.value;
+        this.setState({ _gender: gender });
+    }
+    Save() {
         let user = new User();
         user.firstname = this.state._firstName;
         user.lastname = this.state._lastName;
         user.age = this.state._age;
-        user.aboutme = this.state._aboutMe;
+
+        // check password
+        user.password = this.state._password
+        user.dateOfBirth = this.state._dateOfBirth;
+        user.gender = this.state._gender;
 
         this.props.handleSaveChange(user);
     }
     render() {
         return (
-            <form>
-                <label>Name: </label>
-                <input type='text' id='textFirstName' value={this.state._firstName} onChange={this.onChangeFirstName}/>
-                <br></br>
-                <label>Surname: </label>
-                <input type='text' id='textLastName' value={this.state._lastName} onChange={this.onChangeLastName}/>
-                <br></br>
-                <label>Age: </label>
-                <input type='text' id='textAge' value={this.state._age} onChange={this.onChangeAge}/>
-                <br></br>
-                <label>About me: </label>
-                <input type='text' id='textAboutMe' value={this.state._aboutMe} onChange={this.onChangeAboutMe}/>
-                <br></br>
-                <Link to={`/MySite`} onClick={this.Save}>Save</Link>
-            </form>
+            <div>
+                <table className="mainBlock">
+                    <tr>
+                        <td>
+                            <label>First name: </label>
+                        </td>
+                        <td>
+                            <input type='text' value={this.state._firstName} onChange={this.onChangeFirstName} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Last name: </label>
+                        </td>
+                        <td>
+                            <input type='text' value={this.state._lastName} onChange={this.onChangeLastName} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Email*: </label>
+                        </td>
+                        <td>
+                            <input type='email' value={this.state._email} onChange={this.onChangeEmail} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Password*: </label>
+                        </td>
+                        <td>
+                            <input type='text' value={this.state._password} onChange={this.onChangePassword} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Confirm password*: </label>
+                        </td>
+                        <td>
+                            <input type='text' value={this.state._confirmPassword} onChange={this.onChangeConfirmPassword} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Date of birth*: </label>
+                        </td>
+                        <td>
+                            <input type='date' value={this.state._dateOfBirth} onChange={this.onChangeDateOfBirth} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Gender: </label>
+                        </td>
+                        <td>
+                            <label>Male</label>
+                            <input type='radio' checked name="Radio" value="Male" onChange={this.onChangeGender} />
+                        </td>
+                        <td>
+                            <label>Female</label>
+                            <input type='radio' name="Radio" value="Female" onChange={this.onChangeGender} />
+                        </td>
+                    </tr>
+
+                </table>
+                <Link to={`/MySite`} onClick={this.Save} type="button" className="btn btn-primary">Save</Link>
+            </div>
         )
     }
 }

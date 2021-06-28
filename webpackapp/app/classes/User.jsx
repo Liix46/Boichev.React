@@ -3,7 +3,11 @@ import React from 'react';
 export default class User extends React.Component {
     _firstName = "";
     _lastName = "";
-    _age = '0';
+    _age = "";
+    _email = "";
+    _password = "";
+    _dateOfBirth = "";
+    _gender = "";
     _aboutMe = "";
 
     get firstname() {
@@ -25,6 +29,31 @@ export default class User extends React.Component {
     }
     set age(value) {
         this._age = value;
+    }
+
+    get email() {
+        return this._email;
+    }
+    set email(value){
+        this._email = value;
+    }
+    get password() {
+        return this._password;
+    }
+    set password(value){
+        this._password = value;
+    }
+    get dateOfBirth() {
+        return this._dateOfBirth;
+    }
+    set dateOfBirth(value){
+        this._dateOfBirth = value;
+    }
+    get gender() {
+        return this._gender;
+    }
+    set gender(value){
+        this._gender = value;
     }
 
     get aboutme() {

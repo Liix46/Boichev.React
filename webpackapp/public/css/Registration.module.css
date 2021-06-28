@@ -1,0 +1,43 @@
+.mainBlock{
+    background-image: url('../src/BluePinkBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+
+label{
+    /*border: solid black 1px;*/
+    width: 200px;
+    text-align: end;
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 3vh;
+    
+}
+
+label:first-child{
+    margin-top: 5vh;
+}
+
+input, textarea{
+    margin-left: 5vw;
+    width: 400px;
+    height: 40px;
+    margin-right: 5vw;
+}
+
+#textAboutMe{
+    height: 100px;
+    vertical-align: middle;
+}
+
+.btn{
+    width: 400px;
+    margin-top: 5vh;
+}
+
+input, textarea, .btn{
+    border-radius: 10px;
+}
