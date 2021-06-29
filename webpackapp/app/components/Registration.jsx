@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, BrowserRouter } from 'react-router-dom';
 
 import User from '../classes/User.jsx';
-/*import '../../public/css/Registration.module.css'*/
+import '../../public/css/Registration.module.css'
 
 
 export default class Registation extends React.Component {
@@ -79,70 +79,69 @@ export default class Registation extends React.Component {
     }
     render() {
         return (
-            <div>
-                <table className="mainBlock">
-                    <tr>
-                        <td>
-                            <label>First name: </label>
-                        </td>
-                        <td>
-                            <input type='text' value={this.state._firstName} onChange={this.onChangeFirstName} />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Last name: </label>
-                        </td>
-                        <td>
-                            <input type='text' value={this.state._lastName} onChange={this.onChangeLastName} />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Email*: </label>
-                        </td>
-                        <td>
-                            <input type='email' value={this.state._email} onChange={this.onChangeEmail} />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Password*: </label>
-                        </td>
-                        <td>
-                            <input type='text' value={this.state._password} onChange={this.onChangePassword} />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Confirm password*: </label>
-                        </td>
-                        <td>
-                            <input type='text' value={this.state._confirmPassword} onChange={this.onChangeConfirmPassword} />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Date of birth*: </label>
-                        </td>
-                        <td>
-                            <input type='date' value={this.state._dateOfBirth} onChange={this.onChangeDateOfBirth} />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Gender: </label>
-                        </td>
-                        <td>
-                            <label>Male</label>
-                            <input type='radio' checked name="Radio" value="Male" onChange={this.onChangeGender} />
-                        </td>
-                        <td>
-                            <label>Female</label>
-                            <input type='radio' name="Radio" value="Female" onChange={this.onChangeGender} />
-                        </td>
-                    </tr>
-
+            <div className="mainBlock">
+                <table >
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label>First name: </label>
+                            </td>
+                            <td>
+                                <input type='text' value={this.state._firstName} onChange={this.onChangeFirstName} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Last name: </label>
+                            </td>
+                            <td>
+                                <input type='text' value={this.state._lastName} onChange={this.onChangeLastName} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Email*: </label>
+                            </td>
+                            <td>
+                                <input type='email' value={this.state._email} onChange={this.onChangeEmail} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Password*: </label>
+                            </td>
+                            <td>
+                                <input type='password' value={this.state._password} onChange={this.onChangePassword} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Confirm password*: </label>
+                            </td>
+                            <td>
+                                <input type='password' value={this.state._confirmPassword} onChange={this.onChangeConfirmPassword} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Date of birth*: </label>
+                            </td>
+                            <td>
+                                <input type='date' value={this.state._dateOfBirth} onChange={this.onChangeDateOfBirth} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Gender: </label>
+                            </td>
+                            <td>
+                                <label>Male</label>
+                                <input type='radio' checked={this.state._gender === "Male"} name="Radio" value="Male" onChange={this.onChangeGender} />
+                                <label>Female</label>
+                                <input type='radio' checked={this.state._gender === "Female"} name="Radio" value="Female" onChange={this.onChangeGender} />
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
                 <Link to={`/MySite`} onClick={this.Save} type="button" className="btn btn-primary">Save</Link>
             </div>

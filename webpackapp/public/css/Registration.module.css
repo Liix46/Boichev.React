@@ -1,3 +1,4 @@
+
 .mainBlock{
     background-image: url('../src/BluePinkBackground.jpg');
     background-repeat: no-repeat;
@@ -5,34 +6,24 @@
     width: 100vw;
     height: 100vh;
     text-align: center;
+    padding-top: 100px;
 }
-
+tr{
+    display: inline-block;
+    margin-top: 10px;
+}
 label{
-    /*border: solid black 1px;*/
+    /* border: solid black 1px; */
     width: 200px;
     text-align: end;
-    font-size: 16pt;
-    font-weight: bold;
-    margin-bottom: 3vh;
-    
+    font-weight: bold;   
+    font-size: 16pt; 
 }
-
-label:first-child{
-    margin-top: 5vh;
-}
-
-input, textarea{
+input{
     margin-left: 5vw;
     width: 400px;
     height: 40px;
-    margin-right: 5vw;
 }
-
-#textAboutMe{
-    height: 100px;
-    vertical-align: middle;
-}
-
 .btn{
     width: 400px;
     margin-top: 5vh;
@@ -40,4 +31,36 @@ input, textarea{
 
 input, textarea, .btn{
     border-radius: 10px;
+}
+
+tr:last-child >td:last-child > label{
+    display: inline-block;
+    text-align: left;
+    width: 80px;
+    height: 100%;
+    vertical-align: top;
+}
+tr:last-child >td:last-child > label:first-child{
+    margin-left: 84px;
+}
+tr:last-child >td:last-child > input{
+    display: inline-block;
+    width: 30px;
+    height: 100%;
+    margin-left: 45px;
+    margin-right:20px;
+}
+tr:last-child >td:last-child{
+    text-align: left;
+    vertical-align: text-bottom;
+    height: 30px;
+}
+tr:last-child >td:first-child{
+    padding-right: 35px;
+}
+table{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: solid 1px black; */
 }
