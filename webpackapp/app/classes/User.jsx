@@ -1,5 +1,5 @@
 import React from 'react';
-
+//добавить state id
 export default class User extends React.Component {
     _firstName = "";
     _lastName = "";

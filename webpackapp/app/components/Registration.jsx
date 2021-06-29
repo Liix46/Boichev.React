@@ -135,10 +135,13 @@ export default class Registation extends React.Component {
                                 <label>Gender: </label>
                             </td>
                             <td>
-                                <label>Male</label>
-                                <input type='radio' checked={this.state._gender === "Male"} name="Radio" value="Male" onChange={this.onChangeGender} />
-                                <label>Female</label>
-                                <input type='radio' checked={this.state._gender === "Female"} name="Radio" value="Female" onChange={this.onChangeGender} />
+                                <div className="divGender">
+                                    <label>Male</label>
+                                    <input type='radio' checked={this.state._gender === "Male"} name="Radio" value="Male" onChange={this.onChangeGender} />
+                                    <label>Female</label>
+                                    <input type='radio' checked={this.state._gender === "Female"} name="Radio" value="Female" onChange={this.onChangeGender} />
+                                </div>
+
                             </td>
                         </tr>
                     </tbody>

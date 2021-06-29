@@ -33,34 +33,33 @@ input, textarea, .btn{
     border-radius: 10px;
 }
 
-tr:last-child >td:last-child > label{
+.divGender > label{
     display: inline-block;
     text-align: left;
     width: 80px;
     height: 100%;
     vertical-align: top;
 }
-tr:last-child >td:last-child > label:first-child{
-    margin-left: 84px;
-}
-tr:last-child >td:last-child > input{
-    display: inline-block;
+
+ .divGender > input{
     width: 30px;
     height: 100%;
-    margin-left: 45px;
-    margin-right:20px;
+    /* margin-left: 45px;
+    margin-right:20px; */
 }
 tr:last-child >td:last-child{
     text-align: left;
     vertical-align: text-bottom;
     height: 30px;
 }
-tr:last-child >td:first-child{
-    padding-right: 35px;
-}
 table{
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     /* border: solid 1px black; */
+}
+
+.divGender{
+    width: 400px;
+    height: 40px;
 }
