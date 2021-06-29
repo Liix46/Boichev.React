@@ -1,6 +1,7 @@
 import React from 'react';
-//добавить state id
+// Set state? or this.id = value
 export default class User extends React.Component {
+    _id = ""
     _firstName = "";
     _lastName = "";
     _age = "";
@@ -10,56 +11,48 @@ export default class User extends React.Component {
     _gender = "";
     _aboutMe = "";
 
-    get firstname() {
-        return this._firstName;
+    get id() { return this._id;
     }
-    set firstname(value) {
-        this._firstName = value;
+    set id(value){ this._id = value;
     }
 
-    get lastname() {
-        return this._lastName;
+    get firstname() { return this._firstName; 
     }
-    set lastname(value) {
-        this._lastName = value;
+    set firstname(value) { this._firstName = value;
     }
 
-    get age() {
-        return this._age;
+    get lastname() { return this._lastName;
     }
-    set age(value) {
-        this._age = value;
+    set lastname(value) { this._lastName = value;
     }
 
-    get email() {
-        return this._email;
+    get age() { return this._age;
     }
-    set email(value){
-        this._email = value;
-    }
-    get password() {
-        return this._password;
-    }
-    set password(value){
-        this._password = value;
-    }
-    get dateOfBirth() {
-        return this._dateOfBirth;
-    }
-    set dateOfBirth(value){
-        this._dateOfBirth = value;
-    }
-    get gender() {
-        return this._gender;
-    }
-    set gender(value){
-        this._gender = value;
+    set age(value) { this._age = value;
     }
 
-    get aboutme() {
-        return this._aboutMe;
+    get email() { return this._email;
     }
-    set aboutme(value) {
-        this._aboutMe = value;
+    set email(value){ this._email = value;
+    }
+
+    get password() { return this._password;
+    }
+    set password(value){ this._password = value;
+    }
+
+    get dateOfBirth() { return this._dateOfBirth;
+    }
+    set dateOfBirth(value){ this._dateOfBirth = value;
+    }
+    
+    get gender() { return this._gender;
+    }
+    set gender(value){ this._gender = value;
+    }
+
+    get aboutme() { return this._aboutMe;
+    }
+    set aboutme(value) { this._aboutMe = value;
     }
 }

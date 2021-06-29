@@ -80,8 +80,8 @@ export default class Registation extends React.Component {
     render() {
         return (
             <div className="mainBlock">
-                <table >
-                    <tbody>
+                <table className="tableRegistration">
+                    <tbody className="bodyTable">
                         <tr>
                             <td>
                                 <label>First name: </label>
@@ -144,9 +144,13 @@ export default class Registation extends React.Component {
 
                             </td>
                         </tr>
+                        <tr className="rowForButton">
+                            <td>
+                                <Link to={`/MySite`} onClick={this.Save} type="button" className="btn btn-primary SaveButton">Save</Link>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
-                <Link to={`/MySite`} onClick={this.Save} type="button" className="btn btn-primary">Save</Link>
             </div>
         )
     }

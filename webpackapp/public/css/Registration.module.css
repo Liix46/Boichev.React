@@ -8,28 +8,38 @@
     text-align: center;
     padding-top: 100px;
 }
-tr{
+.bodyTable > tr{
     display: inline-block;
     margin-top: 10px;
 }
-label{
+.bodyTable > tr> td> label,  .divGender>label{
     /* border: solid black 1px; */
     width: 200px;
     text-align: end;
     font-weight: bold;   
     font-size: 16pt; 
 }
-input{
+.divGender>input{
+    margin-right: 10px;
+}
+.bodyTable > tr> td> input, .divGender{
     margin-left: 5vw;
     width: 400px;
     height: 40px;
 }
-.btn{
-    width: 400px;
-    margin-top: 5vh;
+a.SaveButton{
+    width: 150px;
+    margin-top: 40px;
+    
 }
 
-input, textarea, .btn{
+tr.rowForButton{
+    width: 100%;
+    text-align: end;
+    display: grid;
+}
+
+input, .btn{
     border-radius: 10px;
 }
 
@@ -41,25 +51,17 @@ input, textarea, .btn{
     vertical-align: top;
 }
 
- .divGender > input{
+.divGender > input{
     width: 30px;
     height: 100%;
-    /* margin-left: 45px;
-    margin-right:20px; */
 }
-tr:last-child >td:last-child{
+.divGender{
     text-align: left;
-    vertical-align: text-bottom;
     height: 30px;
 }
-table{
+.tableRegistration{
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     /* border: solid 1px black; */
-}
-
-.divGender{
-    width: 400px;
-    height: 40px;
 }

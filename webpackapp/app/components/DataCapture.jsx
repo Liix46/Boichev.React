@@ -13,12 +13,22 @@ export default class DataCapture extends React.Component {
     }
 
     render() {
-        return( <div>
+        return( 
+        <div>
+            <div>
+                {/* first block for image user */}
+            </div>
+            <div>
+                {/* second block for info user and button <changeInfo> - change user data*/}
             <p>Name: {this.state._firstName}</p>
             <p>Surname: {this.state._lastName}</p>
             <p>Date of birth: {this.state._dateOfBirth}</p>
             <p>Gender: {this.state._gender}</p>
             <p>About me: {this.state._aboutMe}</p>
+            </div>
+            <div>
+                {/* third block burger menu 3*/}
+            </div>            
         </div>);
     }
 }
