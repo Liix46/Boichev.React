@@ -1,0 +1,55 @@
+.mainDataCaptureBlock{
+    background-image: url(../src/BluePinkBackground.jpg);
+     
+    background-repeat: no-repeat;
+    background-size: cover;
+      
+    width: 100vw;
+    height:100vh;
+    display: grid;
+    grid-template-areas: 
+    "img header header"
+    "img wall wall"
+    "change wall wall"
+    "info wall wall"
+    "footer footer footer";
+  grid-template-rows: 8%  31% 7% 49% 5%;
+  grid-template-columns: 20% 60% 20%;
+}
+
+.changeBlock{
+    grid-area: change;
+    border: solid white;
+    text-align: end;
+}
+.burgerBlock{
+    grid-area: header;
+    border: solid white;
+}
+.footerBlock{
+    grid-area: footer;
+    border: solid white ;
+}
+.imgBlock{
+    grid-area: img;
+    border: solid white ;
+}
+.infoBlock{
+    grid-area: info;
+    border: solid white ;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 12pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.imgBlock>img{
+    width: 100%;
+}
+
+.wallBlock{
+    grid-area: wall;
+    border: solid white ;
+}
+
+
