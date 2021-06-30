@@ -5,6 +5,7 @@ export default class DataCapture extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            _avatar: this.props.avatar,
             _firstName: this.props.firstName,
             _lastName: this.props.lastName,
             _dateOfBirth: this.props.dateOfBirth,
@@ -22,15 +23,15 @@ export default class DataCapture extends React.Component {
                 </header>
                 <div className="imgBlock">
                     {/* first block for image user */}
-                    <img src="../../public/src/noFace.jpg"></img>
+                    <img src={`${this.state._avatar}`}></img>
                 </div>
                 <div className="infoBlock">
                     {/* second block for info user and button <changeInfo> - change user data*/}
-                    <p><b>Name:</b> {this.state._firstName}</p>
-                    <p><b>Surname:</b> {this.state._lastName}</p>
-                    <p><b>Date of birth:</b> {this.state._dateOfBirth}</p>
-                    <p><b>Gender:</b> {this.state._gender}</p>
-                    <p><b>About me:</b><br></br> {this.state._aboutMe}</p>
+                    <p></p>
+                    <p>{this.state._firstName} {this.state._lastName}</p>
+                    <p>{this.state._dateOfBirth}</p>
+                    <p>{this.state._gender}</p>
+                    <p>{this.state._aboutMe}</p>
                 </div>
 
                 <div className="wallBlock">

@@ -9,6 +9,7 @@ export default class Registation extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            _avatar: "",
             _firstName: "",
             _lastName: "",
             _email: "",
@@ -17,7 +18,7 @@ export default class Registation extends React.Component {
             _dateOfBirth: "",
             _gender: ""
         };
-
+        this.onChangeAvatar = this.onChangeAvatar.bind(this);
         this.onChangeFirstName = this.onChangeFirstName.bind(this);
         this.onChangeLastName = this.onChangeLastName.bind(this);
         this.onChangeEmail = this.onChangeEmail.bind(this);
@@ -29,6 +30,13 @@ export default class Registation extends React.Component {
         this.Save = this.Save.bind(this);
 
     }
+
+    onChangeAvatar(event){
+        let path = event.target.value;
+        this.setState({_avatar: path});
+        
+    }
+
     onChangeFirstName(event) {
         let firstName = event.target.value;
         this.setState({ _firstName: firstName });
@@ -60,6 +68,15 @@ export default class Registation extends React.Component {
     }
     Save() {
         let user = new User();
+
+        if(this.state._avatar !== ""){
+            user.avatar = this.state._avatar; 
+            console.log(user.avatar);
+        }
+        else{
+            user.avatar = "../../public/src/noFace.jpg";
+        }
+        
         user.firstname = this.state._firstName;
         user.lastname = this.state._lastName;
 
@@ -75,6 +92,14 @@ export default class Registation extends React.Component {
             <div className="mainBlock">
                 <table className="tableRegistration">
                     <tbody className="bodyTable">
+                        <tr>
+                            <td>
+                                <label>Avatar: </label>
+                            </td>
+                            <td>
+                                <input type="file" value={this.state._avatar} onChange={this.onChangeAvatar}></input>                                
+                            </td>
+                        </tr>
                         <tr>
                             <td>
                                 <label>First name: </label>

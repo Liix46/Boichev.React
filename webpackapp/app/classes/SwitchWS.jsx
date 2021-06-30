@@ -23,6 +23,7 @@ export default class SwitchWS extends React.Component {
     }
     render() {
 
+        const avatar = this.state._user.avatar;
         const firstname = this.state._user.firstname;
         const lastname = this.state._user.lastname;
         const dateOfBirth = this.state._user.dateOfBirth;
@@ -39,7 +40,9 @@ export default class SwitchWS extends React.Component {
                 </Route>
                 <Route exact path={"/SingIn"} component={Login} />
                 <Route exact path={"/MySite"}>
-                    <DataCapture firstName={`${firstname}`} 
+                    <DataCapture 
+                                avatar = {`${avatar}`}
+                                firstName={`${firstname}`} 
                                 lastName={`${lastname}`} 
                                 dateOfBirth={`${dateOfBirth}`} 
                                 gender={`${gender}`}
@@ -48,6 +51,7 @@ export default class SwitchWS extends React.Component {
                 </Route>
                 <Route exact path={`/setting_user`}>
                     <ChangeSetting handleSaveChange={this.handleUserChange} 
+                                    avatar = {`${avatar}`}
                                     firstName={`${firstname}`} 
                                     lastName={`${lastname}`} 
                                     dateOfBirth={`${dateOfBirth}`} 

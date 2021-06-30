@@ -1,7 +1,8 @@
 import React from 'react';
 // Set state? or this.id = value
 export default class User extends React.Component {
-    _id = ""
+    _id = "";
+    _avatar="";
     _firstName = "";
     _lastName = "";
     _age = "";
@@ -14,6 +15,11 @@ export default class User extends React.Component {
     get id() { return this._id;
     }
     set id(value){ this._id = value;
+    }
+
+    get avatar(){ return this._avatar;
+    }
+    set avatar(value){ this._avatar = value;
     }
 
     get firstname() { return this._firstName; 
