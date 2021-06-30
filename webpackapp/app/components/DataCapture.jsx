@@ -9,7 +9,7 @@ export default class DataCapture extends React.Component {
             _lastName: this.props.lastName,
             _dateOfBirth: this.props.dateOfBirth,
             _gender: this.props.gender,
-            _aboutMe: ""
+            _aboutMe: this.props.aboutMe
         };
 
     }
@@ -26,17 +26,17 @@ export default class DataCapture extends React.Component {
                 </div>
                 <div className="infoBlock">
                     {/* second block for info user and button <changeInfo> - change user data*/}
-                    <p>Name: {this.state._firstName}</p>
-                    <p>Surname: {this.state._lastName}</p>
-                    <p>Date of birth: {this.state._dateOfBirth}</p>
-                    <p>Gender: {this.state._gender}</p>
-                    <p>About me: {this.state._aboutMe}</p>
+                    <p><b>Name:</b> {this.state._firstName}</p>
+                    <p><b>Surname:</b> {this.state._lastName}</p>
+                    <p><b>Date of birth:</b> {this.state._dateOfBirth}</p>
+                    <p><b>Gender:</b> {this.state._gender}</p>
+                    <p><b>About me:</b><br></br> {this.state._aboutMe}</p>
                 </div>
 
                 <div className="wallBlock">
                 </div>
                 <div className="changeBlock">
-                    <Link to="/changedata" type="button" className="btn btn-primary ">Change</Link>
+                    <Link to="/setting_user" type="button" className="btn btn-primary ">Change</Link>
                 </div>
                 <footer className="footerBlock">
                 </footer>

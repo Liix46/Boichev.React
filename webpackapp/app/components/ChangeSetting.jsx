@@ -2,33 +2,30 @@ import React from 'react';
 import { Link, BrowserRouter } from 'react-router-dom';
 
 import User from '../classes/User.jsx';
-import '../../public/css/Registration.module.css'
+import '../../public/css/ChangeSetting.module.css'
 
-
-export default class Registation extends React.Component {
+export default class ChangeSetting extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            _firstName: "",
-            _lastName: "",
-            _email: "",
-            _password: "",
-            _confirmPassword: "",
-            _dateOfBirth: "",
-            _gender: ""
-        };
+            _firstName: this.props.firstName,
+            _lastName: this.props.lastName,
+            _email: this.props.email,
+            _password: this.props.password,
+            _dateOfBirth: this.props.dateOfBirth,
+            _gender: this.props.gender,
+            _aboutMe: this.props.aboutMe
+        }
 
         this.onChangeFirstName = this.onChangeFirstName.bind(this);
         this.onChangeLastName = this.onChangeLastName.bind(this);
-        this.onChangeEmail = this.onChangeEmail.bind(this);
-        this.onChangePassword = this.onChangePassword.bind(this);
-        this.onChangeConfirmPassword = this.onChangeConfirmPassword.bind(this);
         this.onChangeDateOfBirth = this.onChangeDateOfBirth.bind(this);
         this.onChangeGender = this.onChangeGender.bind(this);
+        this.onChangeAboutMe = this.onChangeAboutMe.bind(this);
 
         this.Save = this.Save.bind(this);
-
     }
+
     onChangeFirstName(event) {
         let firstName = event.target.value;
         this.setState({ _firstName: firstName });
@@ -36,18 +33,6 @@ export default class Registation extends React.Component {
     onChangeLastName(event) {
         let lastName = event.target.value;
         this.setState({ _lastName: lastName });
-    }
-    onChangeEmail(event) {
-        let email = event.target.value;
-        this.setState({ _email: email });
-    }
-    onChangePassword(event) {
-        let password = event.target.value;
-        this.setState({ _password: password });
-    }
-    onChangeConfirmPassword(event) {
-        let confirmPassword = event.target.value;
-        this.setState({ _confirmPassword: confirmPassword });
     }
     onChangeDateOfBirth(event) {
         let dateOfBirth = event.target.value;
@@ -58,23 +43,32 @@ export default class Registation extends React.Component {
         let gender = event.target.value;
         this.setState({ _gender: gender });
     }
+    onChangeAboutMe(event){
+        let aboutMe = event.target.value;
+        this.setState({_aboutMe: aboutMe});
+
+    }
+
     Save() {
         let user = new User();
         user.firstname = this.state._firstName;
         user.lastname = this.state._lastName;
-
-        // check password
-        user.password = this.state._password
         user.dateOfBirth = this.state._dateOfBirth;
         user.gender = this.state._gender;
+        user.password = this.state._password;
+        user.email = this.state._email;
+        user.aboutme = this.state._aboutMe;
+
+        console.log(user);
 
         this.props.handleSaveChange(user);
     }
+
     render() {
         return (
-            <div className="mainBlock">
-                <table className="tableRegistration">
-                    <tbody className="bodyTable">
+            <div className="settingBlock">
+                <table className="tableSetting">
+                    <tbody className="bodyTableSetting">
                         <tr>
                             <td>
                                 <label>First name: </label>
@@ -93,30 +87,6 @@ export default class Registation extends React.Component {
                         </tr>
                         <tr>
                             <td>
-                                <label>Email*: </label>
-                            </td>
-                            <td>
-                                <input type='email' value={this.state._email} onChange={this.onChangeEmail} />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>Password*: </label>
-                            </td>
-                            <td>
-                                <input type='password' value={this.state._password} onChange={this.onChangePassword} />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>Confirm password*: </label>
-                            </td>
-                            <td>
-                                <input type='password' value={this.state._confirmPassword} onChange={this.onChangeConfirmPassword} />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
                                 <label>Date of birth*: </label>
                             </td>
                             <td>
@@ -128,13 +98,22 @@ export default class Registation extends React.Component {
                                 <label>Gender: </label>
                             </td>
                             <td>
-                                <div className="divGender">
+                                <div className="divGenderSetting">
                                     <label>Male</label>
                                     <input type='radio' checked={this.state._gender === "Male"} name="Radio" value="Male" onChange={this.onChangeGender} />
                                     <label>Female</label>
                                     <input type='radio' checked={this.state._gender === "Female"} name="Radio" value="Female" onChange={this.onChangeGender} />
                                 </div>
 
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>About me: </label>
+                            </td>
+                            <td>
+                                <textarea value={this.state._aboutMe} onChange={this.onChangeAboutMe} className="textAreaSetting"/>
                             </td>
                         </tr>
                         <tr className="rowForButton">
@@ -148,4 +127,3 @@ export default class Registation extends React.Component {
         )
     }
 }
-

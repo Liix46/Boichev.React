@@ -1,0 +1,80 @@
+
+.settingBlock{
+    background-image: url('../src/BluePinkBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    padding-top: 100px;
+}
+.bodyTableSetting > tr{
+    display: inline-block;
+    margin-top: 10px;
+}
+.bodyTableSetting > tr> td> label,  .divGenderSetting>label{
+    /* border: solid black 1px; */
+    width: 200px;
+    text-align: end;
+    font-weight: bold;   
+    font-size: 16pt; 
+}
+.divGender>input{
+    margin-right: 10px;
+}
+.bodyTableSetting > tr> td> input, .divGenderSetting{
+    margin-left: 5vw;
+    width: 400px;
+    height: 40px;
+}
+
+a.SaveButton{
+    width: 150px;
+    margin-top: 40px;
+    
+}
+
+tr.rowForButton{
+    width: 100%;
+    text-align: end;
+    display: grid;
+}
+
+input, .btn, textarea{
+    border-radius: 10px;
+}
+
+.divGenderSetting > label{
+    display: inline-block;
+    text-align: left;
+    width: 80px;
+    height: 100%;
+    vertical-align: top;
+}
+
+.divGenderSetting > input{
+    width: 30px;
+    height: 100%;
+}
+.divGenderSetting > textarea{
+    width: 30px;
+    height: 100%;
+}
+.divGenderSetting{
+    text-align: left;
+    height: 30px;
+}
+.tableSetting{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: solid 1px black; */
+}
+
+textarea.textAreaSetting{
+    height: 30vh;
+    margin-left: 5vw;
+    width: 400px;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}

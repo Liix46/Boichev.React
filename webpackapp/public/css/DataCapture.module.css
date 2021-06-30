@@ -6,6 +6,8 @@
       
     width: 100vw;
     height:100vh;
+    min-width: 1800px;
+
     display: grid;
     grid-template-areas: 
     "img header header"
@@ -13,43 +15,48 @@
     "change wall wall"
     "info wall wall"
     "footer footer footer";
-  grid-template-rows: 8%  31% 7% 49% 5%;
-  grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 8%  31% 7% 49% 5%;
+    grid-template-columns: 20% 60% 20%;
+
 }
 
 .changeBlock{
-    grid-area: change;
-    border: solid white;
-    text-align: end;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: start;
+    margin-left: 35px;
 }
 .burgerBlock{
     grid-area: header;
-    border: solid white;
 }
 .footerBlock{
     grid-area: footer;
-    border: solid white ;
 }
 .imgBlock{
     grid-area: img;
-    border: solid white ;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 .infoBlock{
     grid-area: info;
-    border: solid white ;
-    padding-left: 10px;
+    padding-left: 35px;
     padding-top: 10px;
     font-size: 12pt;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16pt;
 }
 
 .imgBlock>img{
-    width: 100%;
+    width: 80%;
+    border-radius: 100%;
+    border:   2px solid white;
+
 }
 
 .wallBlock{
     grid-area: wall;
-    border: solid white ;
 }
+
 
 
