@@ -86,13 +86,26 @@ export default class Registation extends React.Component {
         user.gender = this.state._gender;
 
         this.props.handleSaveChange(user);
+
+        const baseUrl = "https://localhost:44343/api/article";
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(user)
+        }
+
+        fetch(baseUrl, options)
+                .then(res => res.json());
     }
     render() {
         return (
             <div className="mainBlock">
                 <table className="tableRegistration">
                     <tbody className="bodyTable">
-                        <tr>
+                        <tr className="firstElem">
                             <td>
                                 <label>Avatar: </label>
                             </td>

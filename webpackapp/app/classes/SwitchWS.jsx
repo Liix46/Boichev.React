@@ -13,13 +13,16 @@ export default class SwitchWS extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            _user: new User()
+            _user: new User(),
+            _isCreated: false
         };
         this.handleUserChange = this.handleUserChange.bind(this);
     }
 
     handleUserChange(user) {
         this.setState({ _user: user });
+
+       
     }
     render() {
 
